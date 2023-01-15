@@ -98,6 +98,7 @@ nav {
 .banner-desc {
     margin: 25px 0;
     color: var(--gray);
+    line-height: 22px;
 }
 
 .banner-img {
@@ -143,6 +144,7 @@ nav {
 .feature-desc {
     margin: 25px 0;
     color: var(--gray);
+    line-height: 22px;
 }
 
 
@@ -428,6 +430,7 @@ using transition & before/after--*/
 .sponsor-desc {
     color: var(--gray);
     margin: 24px 0;
+    line-height: 22px;
 }
 
 .sponsor-companies {
