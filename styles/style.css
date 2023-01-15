@@ -3,6 +3,7 @@
 
 :root {
     --dark: #131313;
+    --dark-two: #424242;
     --gray: #727272;
     --bg-color: #FFF4E7;
 }
@@ -68,7 +69,13 @@ nav {
     font-size: 18px;
     font-weight: 500;
     color: var(--dark);
+    transition: color .2s;
 }
+
+.nav-menu li a:hover {
+    color: rgba(0, 0, 0, 0.35);
+}
+
 
 /* banner section styles */
 .banner-section {
@@ -137,6 +144,7 @@ nav {
     margin: 25px 0;
     color: var(--gray);
 }
+
 
 /* Feature section two styles */
 .feature-section-two {
@@ -213,4 +221,94 @@ nav {
 .experience-btn>p {
     font-size: 20px;
     font-weight: 500;
+}
+
+
+/* some-facts section styles */
+.facts-section {
+    padding: 50px 100px;
+}
+
+.facts-info {
+    width: 40%;
+}
+
+.facts-title {
+    font-size: 40px;
+    color: var(--dark);
+}
+
+.facts-desc {
+    margin: 25px 0;
+    color: var(--gray);
+    line-height: 25px;
+}
+
+.facts {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 0;
+}
+
+.fact {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid hsla(350, 93%, 61%, 1);
+    border-radius: 7px;
+}
+
+.fact img {
+    width: 45px;
+}
+
+.fact h4 {
+    font-size: 36px;
+    color: var(--dark-two);
+    margin: 10px;
+}
+
+.fact p {
+    color: var(--gray);
+}
+
+
+/* sponsor section styles */
+.sponsor-section {
+    padding: 50px 100px;
+}
+
+.sponsor-info {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sponsor-title {
+    font-size: 40px;
+}
+
+.sponsor-desc {
+    color: var(--gray);
+    margin: 24px 0;
+}
+
+.sponsor-companies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+
+/* footer styles */
+.footer {
+    margin: 0 100px 150px;
+    padding: 35px 0;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.footer>p {
+    font-size: 18px;
+    color: var(--dark-two);
 }
