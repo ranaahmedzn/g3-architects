@@ -20,8 +20,8 @@ body {
 }
 
 .container {
-    width: 100%;
     max-width: 1300px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -137,7 +137,7 @@ nav {
 }
 
 .feature-title {
-    font-size: 40px;
+    font-size: 38px;
 }
 
 .feature-desc {
@@ -148,6 +148,7 @@ nav {
 
 /* Feature section two styles */
 .feature-section-two {
+    height: 1000px;
     padding: 50px 100px;
     display: flex;
     gap: 70px;
@@ -160,14 +161,14 @@ nav {
 }
 
 .feature-title-two {
-    font-size: 40px;
+    font-size: 38px;
     padding-left: 20px;
     color: var(--dark);
     border-left: 5px solid hsla(350, 93%, 61%, 1);
 }
 
 .feature-desc-two {
-    margin: 25px 0;
+    margin: 20px 0;
     color: var(--gray);
 }
 
@@ -187,24 +188,25 @@ nav {
 .feature>p {
     margin-top: 10px;
     font-size: 14px;
-    line-height: 25px;
+    line-height: 20px;
 
 }
 
 .feature-img-two {
+    height: 850px;
     width: 48%;
     position: relative;
 }
 
 .feature-img-two>img {
     width: 100%;
-    height: 100%;
+    height: 92%;
 }
 
 .experience-btn {
     position: absolute;
     left: -70px;
-    bottom: -60px;
+    bottom: 0px;
     padding: 30px;
     border: none;
     border-radius: 7px;
@@ -234,7 +236,7 @@ nav {
 }
 
 .facts-title {
-    font-size: 40px;
+    font-size: 38px;
     color: var(--dark);
 }
 
@@ -255,6 +257,12 @@ nav {
     padding: 30px;
     border: 1px solid hsla(350, 93%, 61%, 1);
     border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fact:hover {
+    cursor: pointer;
 }
 
 .fact img {
@@ -262,7 +270,7 @@ nav {
 }
 
 .fact h4 {
-    font-size: 36px;
+    font-size: 38px;
     color: var(--dark-two);
     margin: 10px;
 }
@@ -272,9 +280,139 @@ nav {
 }
 
 
+/*---animation effect on hover 
+using transition & before/after--*/
+
+.fact::before,
+.fact::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(90deg, hsla(350, 93%, 61%, 1) 0%, hsla(8, 98%, 59%, 1) 100%);
+    transition: .5s;
+}
+
+.fact::before {
+    top: -2px;
+    left: 50%;
+    width: 0;
+    height: 5px;
+}
+
+.fact::after {
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 5px;
+}
+
+.fact:hover::before {
+    width: 100%;
+    left: 0;
+    cursor: pointer;
+}
+
+.fact:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.animation::before,
+.animation::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(90deg, hsla(350, 93%, 61%, 1) 0%, hsla(8, 98%, 59%, 1) 100%);
+    transition: .5s;
+}
+
+.animation::before {
+    top: 50%;
+    left: -2px;
+    width: 5px;
+    height: 0;
+}
+
+.animation::after {
+    top: 50%;
+    right: -2px;
+    width: 5px;
+    height: 0;
+}
+
+.fact:hover .animation::before {
+    height: 100%;
+    top: 0;
+}
+
+.fact:hover .animation::after {
+    height: 100%;
+    top: 0;
+}
+
+
+/* feedback section styles */
+.feedback-section {
+    padding: 100px;
+    background-color: var(--bg-color);
+}
+
+.feedback-title {
+    font-size: 38px;
+    text-align: center;
+    color: var(--dark);
+}
+
+.feedback-container {
+    margin-top: 100px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.feedback {
+    width: 300px;
+    padding: 80px 15px 15px;
+    text-align: center;
+    position: relative;
+    border-radius: 7px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
+    background-color: white;
+}
+
+.feedback>img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -45px;
+    left: 100px;
+}
+
+.feedback>h4 {
+    font-size: 20px;
+    color: var(--dark);
+}
+
+.ratings i {
+    font-size: 14px;
+    color: #FFC014;
+}
+
+.feedback>p {
+    font-size: 14px;
+    color: var(--dark-two);
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+.see-more {
+    text-align: center;
+    color: hsla(350, 93%, 61%, 1);
+    font-size: 20px;
+    padding: 20px 0 0;
+}
+
 /* sponsor section styles */
 .sponsor-section {
-    padding: 50px 100px;
+    padding: 100px 100px 50px;
 }
 
 .sponsor-info {
@@ -284,7 +422,7 @@ nav {
 }
 
 .sponsor-title {
-    font-size: 40px;
+    font-size: 38px;
 }
 
 .sponsor-desc {
@@ -297,6 +435,7 @@ nav {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 50px 0;
+    gap: 20px;
 }
 
 
@@ -311,4 +450,100 @@ nav {
 .footer>p {
     font-size: 18px;
     color: var(--dark-two);
+}
+
+.hide {
+    display: none;
+}
+
+
+/*-------------------------
+        Media Query
+---------------------------*/
+@media only screen and (max-width: 576px) {
+
+    nav,
+    .banner-section,
+    .feature-section-one,
+    .feature-section-two,
+    .facts-section,
+    .facts {
+        margin-bottom: 40px;
+        padding: 25px;
+        flex-direction: column;
+    }
+
+    nav,
+    .nav-menu,
+    .facts {
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo>h2 {
+        font-size: 28px;
+    }
+
+    .nav-menu li a {
+        font-size: 16px;
+    }
+
+    .banner-info,
+    .feature-info,
+    .feature-section-two,
+    .feature-info-two,
+    .feature-img-two,
+    .facts-info,
+    .sponsor-info {
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner-title {
+        font-size: 40px;
+    }
+
+    .feature-img {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px;
+    }
+
+    .feature-title,
+    .feature-title-two,
+    .facts-title,
+    .feedback-title {
+        font-size: 32px;
+    }
+
+    .experience-btn {
+        left: 0;
+        bottom: 0px;
+        padding: 20px;
+    }
+
+    .experience-btn>h3 {
+        font-size: 38px;
+    }
+
+    .feedback-section,
+    .sponsor-section {
+        padding: 50px 25px;
+    }
+
+    .feedback-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .sponsor-companies {
+        justify-content: center;
+    }
+
+    .footer {
+        margin: 0;
+        padding: 25px 20px;
+        font-size: 16px;
+    }
 }
